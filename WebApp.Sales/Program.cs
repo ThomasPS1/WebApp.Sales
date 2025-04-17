@@ -1,7 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using WebApp.Sales.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Get connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Register the DbContext with the service container
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+
 
 var app = builder.Build();
 
