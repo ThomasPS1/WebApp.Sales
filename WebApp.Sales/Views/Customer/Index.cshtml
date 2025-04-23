@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApp.Sales.Models.Customer>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a asp-action="Create" >Add</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>customerName</th>
+            <th>email</th>
+            <th>location</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach(var i in Model)
+        {
+            <tr>
+                <td>@i.customerId</td>
+                <td>@i.customName</td>
+                <td>@i.email</td>
+                <td>@i.location</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@i.customerId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@i.customerId">Delete</a>
+                    <a asp-action="Details" asp-route-id="@i.customerId">Details</a>
+
+
+
+
+                </td>
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+

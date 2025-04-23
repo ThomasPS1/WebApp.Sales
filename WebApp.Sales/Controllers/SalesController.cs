@@ -15,15 +15,18 @@ namespace WebApp.Sales.Controllers
 
         public IActionResult Index()
         {
-            var salesList = _context.Sales.ToList(); // fetches from SQL Server
+            var salesList = _context.sales.ToList(); // fetches from SQL Server
             return View(salesList);
         }
 
-        public IActionResult Details() //juuij
+        public IActionResult Details() 
         {
             return View();
 
         }
-        
-       }
+
+
+       
+
+    }
 }
