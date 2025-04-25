@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApp.Sales.Data;
 using WebApp.Sales.Models;
 using WebAppplication.Services.Repository;
 namespace WebApp.Models
 {
+    [Authorize]
     public class CustomerController : Controller
     {
-
+        
         private readonly IEmployeeRepository _repository;
 
         public CustomerController(IEmployeeRepository repository)
