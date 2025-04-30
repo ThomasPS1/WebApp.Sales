@@ -72,6 +72,10 @@ namespace WebApp.Sales.Controllers
             return RedirectToAction("Index");
         }
 
+        //public IActionResult List(string customerName, string Location)
+        //{
+
+        //}
 
 
     }
